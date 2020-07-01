@@ -50,8 +50,17 @@
                 {% elif exercise.is_submittable %}
                     <nav class="exercise-summary navbar navbar-default">
                         <ul class="nav navbar-nav navbar-left exercise-nav ">
-                            <h3 class="exercise-title-new">{{ exercise|parse_localization }}</h3>
-                            <span class="difficulty">{{ exercise.difficulty }}</span>
+                            <li>
+                                {% if exercise.difficulty %}                 
+                                <h3 class="exercise-title-new">{{ exercise|parse_localization }}</h3>
+                                
+                                <small class="difficulty">Difficulty: {{ exercise.difficulty }}</small>
+                                {% else %}
+                                <h3 class="exercise-title-no">{{ exercise|parse_localization }}</h3>
+                                
+                                {% endif %}
+
+                            </li>
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right exercise-nav">
@@ -86,12 +95,9 @@
                         {% blocktrans with points=exercise.points_to_pass %}
                             {{ points }} points required to pass.
                         {% endblocktrans %}
-                        {% endif %}
-                        {% if exercise.is_late_submission_open %}
-                            {% trans "Late submission deadline" %} {{ module.late_submission_deadline }}
-                            {% if module.late_submission_penalty > 0 %}
-                            (-{{ module.late_submission_penalty|percent }}%)
-                            {% endif %}
+                        {% elif exercise.max_points == 15 %}
+                            You have passed this exercise, but can try for more points!
+                                            
                         {% else %}
                             {% trans "Deadline" %}:
                             {{ module.closing_time }}
@@ -118,9 +124,8 @@
                             </div>
                             </nav>
                
-
-                
-<!---                <div class="alert alert-error">
+<!--             
+                <div class="alert alert-error">
                     <p>This code is totally broken. You should write it again.
                     </p>
                 </div>
@@ -128,8 +133,8 @@
                     <p>This code is totally broken. You should write it again.
                     </p>
                 </div>
+-->           
             
--->             
 <!--                <div class="alert alert-loading">
                     <p>Submission is being sent, yay!
                     </p>
@@ -137,10 +142,9 @@
 
                 </div>
 -->                
-<!--
-                <span>  <i class="glyphicon glyphicon-ok"></i></span>
+
                 <span>  <i class="glyphicon gliphicon-remove"></i></span>
--->
+
                 <div class="whatever-feedback ">
                     <p>{{ exercise.description }}
                     </p>
@@ -175,7 +179,8 @@
                     <div href="#are-you-sure" data-toggle="collapse" role="button" aria-controls="are-you-sure" aria-expanded="false" class="alert alert-default" class="btn btn-default exercise-page-modal">Submissions left: 0/3</div>
                 
                 </div>
-                <div class="collapse" id="are-you-sure">
+                <div class="alert alert-default collapse" id="are-you-sure">
+
                     <p>
                         You are about to submit these answers.
                         You're limited to 3 submissions.
