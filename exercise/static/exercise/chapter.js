@@ -561,7 +561,6 @@
 					});
 				});
 			} else {
-				chapter.openModal(chapter.messages.submit);
 				var exercise = this;
 				var url = $(form_element).attr("action");
 				var formData = new FormData(form_element);
@@ -573,7 +572,6 @@
 					if (exercise.quiz) {
 						var badge = input.find('.badge').eq(2).clone();
 						exercise.update(input);
-						chapter.modalSuccess(exercise.element, badge);
 						exercise.renderMath();
 						exercise.dom_element.dispatchEvent(
 							new CustomEvent("aplus:submission-finished",

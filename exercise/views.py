@@ -23,6 +23,7 @@ from .exercisecollection_models import ExerciseCollection
 from .exercise_summary import UserExerciseSummary
 from django.urls import reverse
 
+import logging
 
 class TableOfContentsView(CourseInstanceBaseView):
     template_name = "exercise/toc.html"
@@ -37,6 +38,7 @@ class ExerciseInfoView(ExerciseBaseView):
 
     def get_common_objects(self):
         super().get_common_objects()
+        logging.info(self.get_summary_submissions())
         self.get_summary_submissions()
 
 

@@ -454,16 +454,23 @@ td.submissions-dropdown {
 
 /* exercise wells */
 [data-aplus-exercise] {
-    border: 1px solid #bce8f1;/*grey #e3e3e3;*/
+    border: 1px solid #11134d;/*grey #e3e3e3;*/
     border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -webkit-box-shadow: 5px 5px 5px 5px rgba(0,0,0,.05);
+    box-shadow: -4px 5px 13px 13px rgba(0,0,0,.05);
     margin-bottom: 10px;
     min-height: 150px;
+    max-width: 775px;
 }
+
+
+
+
+
 .exercise-summary {
-    background-color: #d9edf7;/*primary #337ab7;*/
-    border-color: #bce8f1;/*primary #2e6da4;*/
+    background-color: #11134d;/*primary #337ab7;*/
+    border-color: #11134d;/*primary #2e6da4;*/
+    height: 70px; 
     border-radius: 0;
 }
 [data-aplus-exercise] .exercise-summary {
@@ -472,19 +479,38 @@ td.submissions-dropdown {
     border-right: none;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    margin-bottom: 0.5em;
 }
 .exercise-summary .navbar-nav {
-    margin: 0;
+    margin-bottom: 0px;
+    margin-right: 20px;
 }
 .exercise-summary .navbar-nav .navbar-text {
     margin: 15px 15px 0 15px;
+}
+
+.exercise-submission-section {
+    margin-bottom: 5px;
+}
+
+.submission-section {
+    margin-right: 15px;
+}
+
+.date {
+    margin-left: 2em;
+    padding: 0em;
+    margin-bottom: 0em;
+    margin-top: 10px;
+    font-weight: bold;
 }
 .exercise-summary .navbar-nav>li>a,
 .exercise-summary .navbar-nav>.active>a,
 .exercise-summary .navbar-nav>.active>a:focus,
 .exercise-summary .navbar-nav>.active>a:hover,
 .exercise-summary .navbar-nav .navbar-text {
-    color: #31708f;
+    color: #ffffff;
+    padding: 10px 0 0 0;
     background-color: transparent;
 }
 .exercise-summary .navbar-nav>li>a:hover,
@@ -493,20 +519,215 @@ td.submissions-dropdown {
 .exercise-summary .navbar-nav>.open>a:hover {
     background-color: rgba(0,0,0,0.04);
 }
+
+/* Summary */
+.exercise-title-new {
+    padding-left: 1.5em;
+    margin-top: 30px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.exercise-title {
+    display: none;
+}
+
+.exercise-submissions,
+.exercise-points {
+    text-align: right;
+    color: #ffffff;
+    margin-bottom: 0px;
+    margin-top: 7px;
+}
+
+.exercise-points-h4 {
+    color: #ffffff;
+    margin-top: 3px;
+    font-size: 18px;
+}
+
+.exercise-points-a {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.submissions-left {
+    padding-left: 25px;
+}
+
+.exercise-submission-section {
+    background-color: #ffffff;
+    border: none;
+    margin: 0em;
+}
+
+.summary-btn {
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    margin: 3px;
+}
+
+
+.summary-btn:hover {
+    border: none;
+    text-decoration: none;
+    color: #333;
+    background-color: #ccc;
+}
+
+.exercise-repeat {
+    margin: 10px;
+    padding: 15px;
+}
+
+.glyphicon-repeat {
+    font-size: 20px;
+    color: white;
+}
+
+/* General */
+.exercise-response {
+    padding: 0 2em;
+  }
+  
+
+
+/* Alerts */
+.alert-danger {
+    display: none;
+}
+
+.alert-default {
+    padding: 0em;
+}
+
+.alert-error {
+    margin: 2em;
+    background-color:transparent;
+    color: red;
+    border-color: red;
+}
+
+.alert-loading {
+    margin: 2em;
+    background-color:transparent;
+    color: #333;
+    border-color: #ccc;
+    border: 2px solid #ccc;
+}
+
+.alert-success {
+    display: none;
+}
+
+.alert-whoopsie {
+    margin: 2em;
+    background-color:transparent;
+    color: #333;
+    border-color: #f0ad4e;
+    border: 2px solid #f0ad4e;
+}
+
+.whatever-feedback {
+    max-width: 500px;
+    margin: 2em;
+    margin-top: 1em;
+}
+
+
+/* Question feedback */
+.form-control {
+    margin-top: 10px;
+    max-width: 400px;
+}
+
+.form-group {
+    max-width: 700px;
+}
+
+.question-feedback {    
+    background-color:#eee;
+    padding: 5px;
+    padding-left: 8px;
+    max-width: 400px;
+}
+
+li {
+    list-style: none;
+}
+
+.has-error .question-feedback-item {
+    font-weight: 400;
+}
+
+.has-error .form-control {
+    border: 2px solid red;
+}
+
+
+
+/* Submissions */
+
+
+.list-group {
+    margin-top: 1em;
+    margin-left: 5em;
+    margin-right: 4em;
+    max-width: 78%;
+
+}
+
+.my-sub {
+    width: 94%;
+    height: 40px;
+    padding: 8px;
+    padding-top: 8px;
+    margin-left: 21px;
+    vertical-align: center;
+    box-shadow: -1px 1px 1px 1px rgba(0,0,0,.05);
+}
+
+.late-sub {
+    background-color: #ccc;
+}
+
+.glyphicon-list {
+    padding-right: 5px;
+}
+
+.label {
+    color: #333 !important;
+}
+
+/* Confirmation */
+
+#are-you-sure {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+
+
+
+
 .navbar-nav>li>a.file-modal {
     display: inline;
     padding: 0;
     text-decoration: underline;
 }
-.exercise-response {
-  padding: 0 1em;
-}
+
+
+
+
 [data-aplus-no-summary] .exercise-summary {
     display: none;
 }
 .form-inline .form-group div {
     display: inline-block;
 }
+
 .correct-option {
   margin-left: -38px;
   margin-right: 20px;
